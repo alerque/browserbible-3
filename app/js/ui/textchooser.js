@@ -401,7 +401,7 @@ var TextChooser = function(container, target, text_type) {
 						isTopText = checkIsTopText(text.id);
 
 					langHtml.push(
-						createTextRow(text.id, text.langName, text.langNameEnglish, text.abbr, text.name, isTopText, '')
+						createTextRow(text.id, text.langName, text.abbr, text.name, isTopText, '')
 					);
 			
 					if (!hasTopText && isTopText) {
@@ -422,7 +422,10 @@ var TextChooser = function(container, target, text_type) {
 				
 				/*'<tr class="text-chooser-row-header' + (hasTopText ? ' is-top-text' : '') + '"><td colspan="2">' +
 							textsInLang[0].langName +
-								( textsInLang[0].langName != textsInLang[0].langNameEnglish && typeof textsInLang[0].langNameEnglish != 'undefined' ? ' (' + textsInLang[0].langNameEnglish + ')' : '') +
+                // See comments in 4a53bc6 and Issue #33; this could be re-added
+                // to show a localized language name, but the name should come from
+                // the locaallitations available for the current interface language
+								//( textsInLang[0].langName != textsInLang[0].langNameEnglish && typeof textsInLang[0].langNameEnglish != 'undefined' ? ' (' + textsInLang[0].langNameEnglish + ')' : '') +
 							'</td></tr>'
 							*/
 				);
@@ -521,7 +524,7 @@ var TextChooser = function(container, target, text_type) {
 	
 	
 	function createTextRow(id, langName, langNameEnglish, abbr, name, isTopText, className) {
-		var html = '<tr class="text-chooser-row' + (isTopText ? ' is-top-text' : '') + (className != '' ? ' ' + className : '') + '" data-id="' + id + '" data-lang-name="' + langName + '" data-lang-name-english="' + langNameEnglish + '">' +
+		var html = '<tr class="text-chooser-row' + (isTopText ? ' is-top-text' : '') + (className != '' ? ' ' + className : '') + '" data-id="' + id + '" data-lang-name="' + langName + '">' +
 					'<td class="text-chooser-abbr">' + abbr + '</td>' +
 					'<td class="text-chooser-name"><span>' + name + '</span></td>' +
 				'</tr>';
