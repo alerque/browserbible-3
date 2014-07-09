@@ -125,7 +125,6 @@ var TextChooser = function(container, target, text_type) {
 	
 					if (
 						row.attr('data-lang-name').toLowerCase().indexOf(text) > -1 ||
-						row.attr('data-lang-name-english').toLowerCase().indexOf(text) > -1 ||
 						name.text().toLowerCase().indexOf(text) > -1 ||
 						abbr.text().toLowerCase().indexOf(text) > -1) {
 	
@@ -254,7 +253,7 @@ var TextChooser = function(container, target, text_type) {
 
 
 				recentlyUsedHtml +=
-					createTextRow(textInfo.id, textInfo.langName, textInfo.langNameEnglish, textInfo.abbr, textInfo.name, isTopText, 'text-chooser-recently-used' );
+					createTextRow(textInfo.id, textInfo.langName, textInfo.abbr, textInfo.name, isTopText, 'text-chooser-recently-used' );
 
 			}
 
@@ -413,8 +412,6 @@ var TextChooser = function(container, target, text_type) {
 				html.push(
 					createHeaderRow(
 						'',
-						textsInLang[0].langName +
-								( textsInLang[0].langName != textsInLang[0].langNameEnglish && typeof textsInLang[0].langNameEnglish != 'undefined' ? ' (' + textsInLang[0].langNameEnglish + ')' : ''),
 						'',
 						'',
 						(hasTopText ? ' is-top-text' : '')					
@@ -422,10 +419,6 @@ var TextChooser = function(container, target, text_type) {
 				
 				/*'<tr class="text-chooser-row-header' + (hasTopText ? ' is-top-text' : '') + '"><td colspan="2">' +
 							textsInLang[0].langName +
-                // See comments in 4a53bc6 and Issue #33; this could be re-added
-                // to show a localized language name, but the name should come from
-                // the locaallitations available for the current interface language
-								//( textsInLang[0].langName != textsInLang[0].langNameEnglish && typeof textsInLang[0].langNameEnglish != 'undefined' ? ' (' + textsInLang[0].langNameEnglish + ')' : '') +
 							'</td></tr>'
 							*/
 				);
@@ -484,7 +477,7 @@ var TextChooser = function(container, target, text_type) {
 						var text = textsInCountry[textIndex];
 	
 						html.push(
-							createTextRow(text.id, text.langName, text.langNameEnglish, text.abbr, text.name, isTopText, 'collapsed')
+							createTextRow(text.id, text.langName, text.abbr, text.name, isTopText, 'collapsed')
 						);
 						
 					}
@@ -523,7 +516,7 @@ var TextChooser = function(container, target, text_type) {
 	});
 	
 	
-	function createTextRow(id, langName, langNameEnglish, abbr, name, isTopText, className) {
+	function createTextRow(id, langName, abbr, name, isTopText, className) {
 		var html = '<tr class="text-chooser-row' + (isTopText ? ' is-top-text' : '') + (className != '' ? ' ' + className : '') + '" data-id="' + id + '" data-lang-name="' + langName + '">' +
 					'<td class="text-chooser-abbr">' + abbr + '</td>' +
 					'<td class="text-chooser-name"><span>' + name + '</span></td>' +
@@ -532,7 +525,7 @@ var TextChooser = function(container, target, text_type) {
 		return html;		
 	}
 	
-	function createHeaderRow(id, name, englishName, additionalHtml, className) {
+	function createHeaderRow(id, name, additionalHtml, className) {
 		var html = '<tr class="text-chooser-row-header' + (className != '' ? ' ' + className : '') + '" data-id="' + id + '"><td colspan="2">' +
 					'<span class="name">' + name + '</span>' + 
 					additionalHtml + 
