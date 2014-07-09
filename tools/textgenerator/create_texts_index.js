@@ -14,21 +14,17 @@
 		{
 			"id": "eng_web",
 			"name": "World English Bible",
-			"nameEnglish": "",
 			"abbr": "WEB",
 			"lang": "eng",
 			"langName": "English",
-			"langNameEnglish": "English",
 			"dir": "ltr"
 		},
 		{
 			"id": "gre_tisch",
 			"name": "Tischedorf (2.7)",
-			"nameEnglish": "Tischedorf (2.7)",
 			"abbr": "TIS",
 			"lang": "gre",
 			"langName": "ελληνικά",
-			"langNameEnglish": "Greek",
 			"dir": "ltr"
 		}
 	]
@@ -66,11 +62,9 @@ for (var dirItemIndex in dirItem) {
 		texts.textInfoData.push({
 			id: data.id,
 			name: data.name,
-			nameEnglish: data.nameEnglish,
 			abbr: data.abbr,
 			lang: data.lang,
 			langName: data.langName,
-			langNameEnglish: data.langNameEnglish,
 			dir: data.dir,
 			type: data.type
 		});
@@ -116,7 +110,6 @@ for (var index in languages) {
 	// make language header
 	indexHtml.push('<tr class="texts-index-header"><th colspan="2">' + breakChar +
 				textsInLang[0].langName +
-					( textsInLang[0].langName != textsInLang[0].langNameEnglish ? ' (' + textsInLang[0].langNameEnglish + ')' : '') +
 				'</th></tr>' + breakChar
 	);
 
