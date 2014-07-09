@@ -1,4 +1,4 @@
-sofia.resources['zh-CN'] = {
+sofia.resources["zh-CN"] = {
 	"translation": {
 		"name": "中文",
 		"menu": {
