@@ -202,7 +202,8 @@ TextSearch = function() {
 	function loadNextSectionid() {
 		searchIndexesCurrentIndex++;
 
-		////console.log('loadNextSectionid', searchIndexesData.length, searchIndexesCurrentIndex);
+		////sofia.config.debug && console.info('loadNextSectionid', searchIndexesData.length, searchIndexesCurrentIndex);
+		////sofia.config.debug && console.info('loadNextSectionid', searchIndexesData.length, searchIndexesCurrentIndex);
 
 		if (searchIndexesCurrentIndex > searchIndexesData.length) {
 
@@ -464,7 +465,8 @@ SearchTools = {
 				addWord();
 			}
 
-			////console.log(letter, charCode);
+			////sofia.config.debug && console.info(letter, charCode);
+			////sofia.config.debug && console.info(letter, charCode);
 	    }
 
 		addWord();
@@ -625,8 +627,10 @@ SearchIndexLoader = function() {
 				// combine all the fragments
 				for (var i=0, il=loadedIndexes.length; i<il; i++) {
 					fragmentids = fragmentids.concat( loadedIndexes[i] ); // .occurrences );
-					////console.log(loadedIndexes[i].term);
-					////console.log(loadedIndexes[i].occurrences);
+					////sofia.config.debug && console.info(loadedIndexes[i].term);
+					////sofia.config.debug && console.info(loadedIndexes[i].term);
+					////sofia.config.debug && console.info(loadedIndexes[i].occurrences);
+					////sofia.config.debug && console.info(loadedIndexes[i].occurrences);
 				}
 
 				// sort!

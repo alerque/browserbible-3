@@ -34,7 +34,8 @@ var ConfigUrl = function(node) {
 	setTimeout(function() {
 		sofia.app.windowManager.on('settingschange', function(e) {
 
-			////console.log('update');
+			////sofia.config.debug && console.info('update');
+			////sofia.config.debug && console.info('update');
 
 			// title to show active window's position
 			urlTimer.start();

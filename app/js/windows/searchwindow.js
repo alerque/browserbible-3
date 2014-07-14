@@ -87,7 +87,8 @@ var SearchWindow = function(id, parentNode, init_data) {
 	});
 
 	function docClick(e) {
-		////console.log('doc click');
+		////sofia.config.debug && console.info('doc click');
+		////sofia.config.debug && console.info('doc click');
 
 		var target = $(e.target),
 			clickedOnChooser = false;
@@ -235,7 +236,8 @@ var SearchWindow = function(id, parentNode, init_data) {
 				if (textInfo.type.toLowerCase() == 'bible') {
 					var br = new bible.Reference(result.fragmentid);
 
-					////console.log(br, br.toString(), bible.BOOK_DATA['GN'].names[textInfo.lang]);
+					////sofia.config.debug && console.info(br, br.toString(), bible.BOOK_DATA['GN'].names[textInfo.lang]);
+					////sofia.config.debug && console.info(br, br.toString(), bible.BOOK_DATA['GN'].names[textInfo.lang]);
 
 					if (bible.BOOK_DATA['GN'].names[textInfo.lang]) {
 						br.lang = textInfo.lang;
@@ -624,7 +626,8 @@ var SearchWindow = function(id, parentNode, init_data) {
 	ext.on('message', function(e) {
 
 		if (e.data.messagetype == 'textload') {
-			////console.log('search:textload', e.data.sectionid);
+			////sofia.config.debug && console.info('search:textload', e.data.sectionid);
+			////sofia.config.debug && console.info('search:textload', e.data.sectionid);
 
 			createHighlights(e.data.content);
 
