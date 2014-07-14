@@ -66,7 +66,7 @@ var MainLogo = function(node) {
 
 						if (sofia.config.baseContentUrl != '') {
 
-							console.log("No local about.html");
+							sofia.config.debug && console.log("No local about.html");
 
 							// this one will go through the CDN
 							sofia.ajax({
@@ -74,7 +74,7 @@ var MainLogo = function(node) {
 								dataType: 'text',
 								success: function(data) {
 
-									console.log('Success: CDN about.html', data.indexOf('<html'));
+									sofia.config.debug && console.log('Success: CDN about.html', data.indexOf('<html'));
 
 									aboutWindow.body.removeClass('loading-indicator');
 
@@ -85,13 +85,13 @@ var MainLogo = function(node) {
 								error: function() {
 
 									// error
-									console.log("Can't find a about.html");
+									sofia.config.debug && console.log("Can't find a about.html");
 
 								}
 							});
 						} else {
 
-							console.log("No local about.html, no CDN to check");
+							sofia.config.debug && console.log("No local about.html, no CDN to check");
 
 						}
 					}

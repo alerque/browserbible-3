@@ -65,7 +65,7 @@ var GoogleAnalyticsPlugin = function(app) {
 	// listen for times when the user changes location
 	ext.on('globalmessage', function(e) {
 
-		console.log('GOOGLE', e.data);
+		sofia.config.debug && console.log('GOOGLE', e.data);
 
 		if (e.data.messagetype == 'usernav') {
 

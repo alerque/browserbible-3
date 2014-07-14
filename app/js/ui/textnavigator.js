@@ -208,7 +208,7 @@ var TextNavigator = function(container, target) {
 	// sections = bible chapters
 	function renderSections() {
 
-		console.log('renderSections', textInfo.type);
+		sofia.config.debug && console.log('renderSections', textInfo.type);
 
 		var html = [];
 
@@ -260,7 +260,7 @@ var TextNavigator = function(container, target) {
 							.addClass('selected')
 							.attr('data-id');
 
-		console.log('navigator selected', sectionid);
+		sofia.config.debug && console.log('navigator selected', sectionid);
 		ext.trigger('change', {type:'change', target: this, data: sectionid});
 		//navigation_changed_callback(sectionid);
 

@@ -167,7 +167,7 @@ var Scroller = function(node) {
 			load_more();
 		}
 
-		console.log(e.type, e.which);
+		sofia.config.debug && console.log(e.type, e.which);
 	});
 	*/
 

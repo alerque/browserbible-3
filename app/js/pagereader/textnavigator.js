@@ -25,7 +25,7 @@ var TextNavigator = function(lang, navigation_changed_callback) {
 		// remove all selections
 		changer.find('.selected').removeClass('selected');
 
-		console.log('showChanger', textInfo);
+		sofia.config.debug && console.log('showChanger', textInfo);
 
 		switch (textInfo.type) {
 			case 'bible':
@@ -44,7 +44,7 @@ var TextNavigator = function(lang, navigation_changed_callback) {
 
 	// divisions = Bible books
 	function renderDivisions() {
-		console.log('renderDivisions', textInfo);
+		sofia.config.debug && console.log('renderDivisions', textInfo);
 
 		// render books
 		var html = [];
@@ -77,7 +77,7 @@ var TextNavigator = function(lang, navigation_changed_callback) {
 			.siblings()
 				.removeClass('selected')
 
-		console.log('division click', this);
+		sofia.config.debug && console.log('division click', this);
 
 
 		renderSections();
@@ -88,7 +88,7 @@ var TextNavigator = function(lang, navigation_changed_callback) {
 	// secions = bible chapters
 	function renderSections() {
 
-		console.log('renderSections', textInfo.type);
+		sofia.config.debug && console.log('renderSections', textInfo.type);
 
 		var html = [];
 

@@ -29,7 +29,7 @@ var LemmaPopupPlugin = function(app) {
 				lemma = link.attr('data-lemma'),
 				textid = link.attr('data-textid');
 
-			console.log(lemma, textid);
+			sofia.config.debug && console.log(lemma, textid);
 
 			sofia.app.windowManager.add('SearchWindow', {searchtext: lemma, textid: textid});
 

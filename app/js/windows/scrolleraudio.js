@@ -136,7 +136,7 @@ var AudioController = function(id, container, ui, scroller) {
 
 	function updateDramatic() {
 
-		console.log('change dramatic');
+		sofia.config.debug && console.log('change dramatic');
 
 		var storedFragmentid = fragmentid;
 
@@ -510,7 +510,7 @@ var AudioController = function(id, container, ui, scroller) {
 					if (newAudioInfo != null) {
 						audioInfo = newAudioInfo;
 
-						console.log('AUDIO: YES', textInfo.id, textInfo.lang, audioInfo.type);
+						sofia.config.debug && console.log('AUDIO: YES', textInfo.id, textInfo.lang, audioInfo.type);
 
 						hasAudio = true;
 
@@ -529,7 +529,7 @@ var AudioController = function(id, container, ui, scroller) {
 										(typeof audioInfo.fcbh_drama_nt != 'undefined' && audioInfo.fcbh_drama_nt != '') ||
 										(typeof audioInfo.fcbh_drama_ot != 'undefined' && audioInfo.fcbh_drama_ot != '');
 
-							console.log(audioInfo, 'drama', hasDrama, 'audio', hasNonDrama);
+							sofia.config.debug && console.log(audioInfo, 'drama', hasDrama, 'audio', hasNonDrama);
 
 							// show hide
 							if (hasNonDrama && hasDrama) {
@@ -564,7 +564,7 @@ var AudioController = function(id, container, ui, scroller) {
 						}
 						*/
 
-						console.log("after dramatic switch");
+						sofia.config.debug && console.log("after dramatic switch");
 
 						if (fragmentid != '') {
 							var newFragmentid = fragmentid;

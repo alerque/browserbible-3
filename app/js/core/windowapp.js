@@ -96,7 +96,7 @@ var App = function() {
 	}
 
 	function resize() {
-		console.log('app resize');
+		sofia.config.debug && console.log('app resize');
 
 		PlaceKeeper.storePlace();
 
@@ -161,7 +161,7 @@ var App = function() {
 
 							// convert short querystring key to longer one if needed
 							var longParamKey = winTypeParamKeys.filter(function(lpk) {
-								console.log(key, lpk, winTypeInfo.paramKeys[lpk]);
+								sofia.config.debug && console.log(key, lpk, winTypeInfo.paramKeys[lpk]);
 								return key == winTypeInfo.paramKeys[lpk] || key == lpk;
 							})[0];
 

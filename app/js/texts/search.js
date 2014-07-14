@@ -141,7 +141,7 @@ TextSearch = function() {
 				isSearching = false;
 			},
 			error: function(a,b,c,d) {
-				console.log('error:serverSearch', a,b,c,d);
+				sofia.config.debug && console.log('error:serverSearch', a,b,c,d);
 				//reset()
 			}
 		})

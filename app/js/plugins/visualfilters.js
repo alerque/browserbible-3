@@ -176,7 +176,7 @@ var VisualFilters = function(node) {
 				newStyleParams = newStyle.attr('data-style'),
 				newStyleLabel = newStyle.html();
 
-			console.log('new style', newStyleParams);
+			sofia.config.debug && console.log('new style', newStyleParams);
 
 			// add to data
 			activeSpan

@@ -35,7 +35,7 @@ var NotesPopupPlugin = function(app) {
 
 		e.preventDefault();
 
-		console.log('notes');
+		sofia.config.debug && console.log('notes');
 
 		var key = $(this);
 

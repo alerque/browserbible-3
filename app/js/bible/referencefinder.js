@@ -63,7 +63,7 @@ bible.ReferenceFinder = (function() {
 				formattedText += '<span class="v-link" data-fragmentid="' + ref.toSection() + '">' + subPart + '</a>';
 
 
-				console.log(subPart, ref.toString());
+				sofia.config.debug && console.log(subPart, ref.toString());
 
 				refs.push( ref );
 				lastRef = ref;

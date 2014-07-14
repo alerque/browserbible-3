@@ -80,7 +80,7 @@ var ReaderApp = function($) {
 
 	function text_changed(newTextInfo) {
 
-		console.log('text_changed', newTextInfo);
+		sofia.config.debug && console.log('text_changed', newTextInfo);
 
 		// update the navigator with the latest info
 		textNavigator.setTextInfo(newTextInfo);
@@ -126,7 +126,7 @@ var ReaderApp = function($) {
 
 	function load_more() {
 
-		console.log('more',pager.getCurrentPageNumber(), pager.getTotalPages());
+		sofia.config.debug && console.log('more',pager.getCurrentPageNumber(), pager.getTotalPages());
 		//return;
 
 		// if we are on the last or second to last page,
@@ -138,7 +138,7 @@ var ReaderApp = function($) {
 				prevSectionId = lastSection.attr('data-previd'),
 				nextSectionId = lastSection.attr('data-nextid');
 
-			console.log('page', lastSectionId, prevSectionId, nextSectionId, lastSection);
+			sofia.config.debug && console.log('page', lastSectionId, prevSectionId, nextSectionId, lastSection);
 
 			texts.TextLoader.load(currentTextInfo, nextSectionId, function(content) {
 				pager.add(content);
@@ -186,7 +186,7 @@ var ReaderApp = function($) {
 	}
 
 	function store_settings() {
-		console.log('store_settings');
+		sofia.config.debug && console.log('store_settings');
 
 		AppSettings.setValue('reader-settings',
 			{

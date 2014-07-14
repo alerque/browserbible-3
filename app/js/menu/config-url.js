@@ -96,7 +96,7 @@ var ConfigUrl = function(node) {
 				winTypeInfo = sofia.windowTypes.filter(function(winType) { return winType.param == winTypeName; })[0];
 
 			if (typeof winTypeInfo == 'undefined') {
-				console.log('Cannot find', winTypeName, winTypeInfo, winSettings.data.params, winSettings.data.params.win);
+				sofia.config.debug && console.log('Cannot find', winTypeName, winTypeInfo, winSettings.data.params, winSettings.data.params.win);
 				continue;
 			}
 
@@ -136,7 +136,7 @@ var ConfigUrl = function(node) {
 		urlInput.val(url);
 		urlDiv.html(url);
 
-		console.log('URL', url);
+		sofia.config.debug && console.log('URL', url);
 	}
 
 

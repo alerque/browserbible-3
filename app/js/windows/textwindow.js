@@ -150,7 +150,7 @@ var TextWindow = function(id, node, init_data, text_type) {
 
 	textlistui.on('click', function(e) {
 
-		console.log('clicked');
+		sofia.config.debug && console.log('clicked');
 
 		if (flipper.hasClass('showinfo')) {
 			flipper.removeClass('showinfo')
@@ -366,7 +366,7 @@ var TextWindow = function(id, node, init_data, text_type) {
 			// error handler
 			function() {
 
-				console.log('ERROR', init_data.textid, 'doesnt exist');
+				sofia.config.debug && console.log('ERROR', init_data.textid, 'doesnt exist');
 
 				// load all possible versions
 				TextLoader.loadTexts(function(textInfoData) {

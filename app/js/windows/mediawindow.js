@@ -71,7 +71,7 @@ var MediaWindow = function(id, parentNode, data) {
 			verse.addClass('checked-media');
 		});
 
-		console.log(html);
+		sofia.config.debug && console.log(html);
 
 		gallery.html(html);
 
@@ -193,7 +193,7 @@ var MediaWindow = function(id, parentNode, data) {
 					width_per_item = Math.ceil(remainder / currentRow.length);
 
 
-				console.log('row',
+				sofia.config.debug && console.log('row',
 								row_ratio,
 								container_width, current_width,
 								container_width - current_width);

@@ -2315,7 +2315,7 @@ var JesusFilmMediaApi = (function() {
 				findPlayers();
 			},
 			error: function(a,b,c,d) {
-				console.log('error', a,b,c,d);
+				sofia.config.debug && console.log('error', a,b,c,d);
 			}
 
 

@@ -320,7 +320,7 @@
       if (console.warn) {
         console.warn(deprecationWarning);
       } else {
-        console.log(deprecationWarning);
+        sofia.config.debug && console.log(deprecationWarning);
       }
     }
   };

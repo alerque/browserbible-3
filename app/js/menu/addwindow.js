@@ -84,7 +84,7 @@ var AddWindowButton = function(node) {
 
 			// if no location, then use the defaults from config
 			if (currentData != null) {
-				console.log('first window', currentData);
+				sofia.config.debug && console.log('first window', currentData);
 				settings.data.fragmentid = currentData.fragmentid;
 				settings.data.sectionid = currentData.sectionid;
 			} else {
@@ -95,7 +95,7 @@ var AddWindowButton = function(node) {
 				settings.data.sectionid = sectionid;
 			}
 
-			console.log('new window', settings);
+			sofia.config.debug && console.log('new window', settings);
 		}
 
 		PlaceKeeper.storePlace();

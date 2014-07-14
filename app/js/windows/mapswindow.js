@@ -130,7 +130,7 @@ var MapWindow = function(id, parentNode, data) {
 									}
 								});
 
-		console.log('clicked', this);
+		sofia.config.debug && console.log('clicked', this);
 
 	});
 
@@ -145,7 +145,7 @@ var MapWindow = function(id, parentNode, data) {
 
 		document.body.appendChild(script);
 	} else {
-		console.log('gogole is loaded');
+		sofia.config.debug && console.log('gogole is loaded');
 
 		// load now!
 		window[loadMapFunctionName]();
@@ -154,7 +154,7 @@ var MapWindow = function(id, parentNode, data) {
 
 	function loadPins() {
 
-		console.log('MAP: loading pins');
+		sofia.config.debug && console.log('MAP: loading pins');
 
 		sofia.ajax({
 			dataType: 'json',
@@ -217,7 +217,7 @@ var MapWindow = function(id, parentNode, data) {
 		}
 		var after = new Date();
 
-		console.log('process time', after - before);
+		sofia.config.debug && console.log('process time', after - before);
 
 
 		// SO SLOW!
@@ -246,7 +246,7 @@ var MapWindow = function(id, parentNode, data) {
 		}
 		var after = new Date();
 
-		console.log('process time', after - before);
+		sofia.config.debug && console.log('process time', after - before);
 		*/
 
 		//parentNode.html( JSON.stringify(locationDataByVerse) );
@@ -375,7 +375,7 @@ var MapWindow = function(id, parentNode, data) {
 
 
 	function close() {
-		console.log('closing maps');
+		sofia.config.debug && console.log('closing maps');
 
 		geocoder = null;
 		map = null;

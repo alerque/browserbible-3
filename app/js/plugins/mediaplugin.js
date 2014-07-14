@@ -14,7 +14,7 @@ var MediaLibraryPlugin = function(app) {
 		mediaPopup = new InfoWindow(),
 		contentToProcess = [];
 
-	console.log('MediaLibraryPlugin startup', MediaLibrary.getMediaLibraries);
+	sofia.config.debug && console.log('MediaLibraryPlugin startup', MediaLibrary.getMediaLibraries);
 
 	MediaLibrary.getMediaLibraries(function(data) {
 		mediaLibraries = data;
@@ -116,7 +116,7 @@ var MediaLibraryPlugin = function(app) {
 	// process chapters, add image icon to verses
 	function addMedia() {
 
-		console.log('addMedia',mediaLibraries);
+		sofia.config.debug && console.log('addMedia',mediaLibraries);
 
 		if (mediaLibraries == null) {
 			return;

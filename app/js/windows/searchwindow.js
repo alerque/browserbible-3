@@ -419,7 +419,7 @@ var SearchWindow = function(id, parentNode, init_data) {
 			if (fragmentid.indexOf(dbsBookCode) == 0) {
 
 				// scrollTo
-				console.log('found', tr.offset());
+				sofia.config.debug && console.log('found', tr.offset());
 
 				main.scrollTop( tr.offset().top - tr.outerHeight(true) - 50);
 
@@ -461,7 +461,7 @@ var SearchWindow = function(id, parentNode, init_data) {
 			textid = textInfo.id;
 
 
-		console.log('search', textid, text, textInfo);
+		sofia.config.debug && console.log('search', textid, text, textInfo);
 
 
 		// clear results
@@ -523,7 +523,7 @@ var SearchWindow = function(id, parentNode, init_data) {
 
 			});
 		} else {
-			console.log('SEARCH: no init textid');
+			sofia.config.debug && console.log('SEARCH: no init textid');
 
 			for (var index in TextLoader.textData) {
 				var textInfo = TextLoader.textData[index];

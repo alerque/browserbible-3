@@ -80,7 +80,7 @@ var Pager = function(parent_node, paginate_callback) {
 		// calculate movement
 		new_left_position = -(new_page_number-1) * parent_width;
 
-		console.log('move', direction, new_page_number, new_left_position);
+		sofia.config.debug && console.log('move', direction, new_page_number, new_left_position);
 
 		isMoving = true;
 
@@ -151,7 +151,7 @@ var Pager = function(parent_node, paginate_callback) {
 			new_page_number = 0,
 			new_page = null;
 
-		console.log('direction', current_page_number, pages.length);
+		sofia.config.debug && console.log('direction', current_page_number, pages.length);
 
 
 		switch (direction) {
@@ -163,7 +163,7 @@ var Pager = function(parent_node, paginate_callback) {
 				new_page_number = current_page_number+1;
 				new_page = pages[new_page_number-1];
 
-				console.log('appending', new_page);
+				sofia.config.debug && console.log('appending', new_page);
 
 				isMoving = true;
 
@@ -251,7 +251,7 @@ var Pager = function(parent_node, paginate_callback) {
 				new_page_number = current_page_number-1;
 				new_page = pages[new_page_number-1];
 
-				console.log('appending', new_page);
+				sofia.config.debug && console.log('appending', new_page);
 
 				isMoving = true;
 

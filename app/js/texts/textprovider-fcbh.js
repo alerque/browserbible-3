@@ -142,7 +142,7 @@ sofia.textproviders['fcbh'] = (function() {
 				});
 			} else {
 
-				console.log('FCBH error', 'No NT or OT id', info);
+				sofia.config.debug && console.log('FCBH error', 'No NT or OT id', info);
 
 			}
 

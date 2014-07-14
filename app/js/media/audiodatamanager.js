@@ -508,7 +508,7 @@ var FaithComesByHearingAudio = (function() {
 			}
 		}
 
-		console.log('audio preference', audioOption, dam_id);
+		sofia.config.debug && console.log('audio preference', audioOption, dam_id);
 
 		var collectionInfo = getFbchCollectionById(dam_id);
 		if (collectionInfo != null) {
@@ -548,7 +548,7 @@ var FaithComesByHearingAudio = (function() {
 			},
 			error: function(a,b,c,d) {
 
-				console.log('FCBH location error', a,b,c,d);
+				sofia.config.debug && console.log('FCBH location error', a,b,c,d);
 
 				if (callback) {
 					callback(null);

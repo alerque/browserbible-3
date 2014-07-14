@@ -77,7 +77,7 @@ var CrossReferencePopupPlugin = function(app) {
 			}
 
 
-			console.log('hover', textid, sectionid, fragmentid);
+			sofia.config.debug && console.log('hover', textid, sectionid, fragmentid);
 
 			TextLoader.getText(textid, function(textInfo) {
 

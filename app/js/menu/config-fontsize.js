@@ -41,7 +41,7 @@ var FontSizeSettings = function(node) {
 		.appendTo(body.find('td:eq(1)') )
 		.on('change input', function() {
 
-			console.log( $(this).val() );
+			sofia.config.debug && console.log( $(this).val() );
 			setFontSize( $(this).val() );
 
 		});

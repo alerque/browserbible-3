@@ -114,7 +114,7 @@ var ParallelsWindow = function(id, node, init_data) {
 		// TEMP
 		textlistui.html('Version');
 
-		console.log('textsindow init',init_data, textsInitialized);
+		sofia.config.debug && console.log('textsindow init',init_data, textsInitialized);
 
 		if (init_data == null) {
 			return;
@@ -133,7 +133,7 @@ var ParallelsWindow = function(id, node, init_data) {
 				}
 
 				//
-				console.log('parallel init', init_data.parallelid);
+				sofia.config.debug && console.log('parallel init', init_data.parallelid);
 
 				if (init_data.parallelid) {
 
@@ -143,7 +143,7 @@ var ParallelsWindow = function(id, node, init_data) {
 
 					parallelsList.find('option[data-id*="gospel"]:first').prop('selected', true);
 
-					console.log('first gospel', parallelsList.find('option[data-id~="gospel"]:first'));
+					sofia.config.debug && console.log('first gospel', parallelsList.find('option[data-id~="gospel"]:first'));
 				}
 
 				startup();
@@ -172,7 +172,7 @@ var ParallelsWindow = function(id, node, init_data) {
 			// error handler
 			function() {
 
-				console.log('ERROR', init_data.textid, 'doesnt exist');
+				sofia.config.debug && console.log('ERROR', init_data.textid, 'doesnt exist');
 
 				// load all possible versions
 				TextLoader.loadTexts(function(textInfoData) {
@@ -239,18 +239,18 @@ var ParallelsWindow = function(id, node, init_data) {
 		currentCells = null;
 		currentCellIndex = -1;
 
-		console.log('parallels', parallelsList.val());
+		sofia.config.debug && console.log('parallels', parallelsList.val());
 
 		sofia.ajax({
 			dataType: 'json',
 			url: 'content/parallels/' + parallelsList.val(),
 			success: function(data) {
-				console.log('loaded parallel data', data);
+				sofia.config.debug && console.log('loaded parallel data', data);
 				currentParallelData = data;
 				createParallel();
 			},
 			error: function(e) {
-				console.log('error laoding parallel data', e);
+				sofia.config.debug && console.log('error laoding parallel data', e);
 			}
 		});
 	}
@@ -475,7 +475,7 @@ var ParallelsWindow = function(id, node, init_data) {
 
 		currentCells = main.find('tr.parallel-entry-text-collapsed td');
 
-		console.log('total cells', currentCells.length);
+		sofia.config.debug && console.log('total cells', currentCells.length);
 
 		currentCellIndex = 0;
 		loadNextPassage();
@@ -552,7 +552,7 @@ var ParallelsWindow = function(id, node, init_data) {
 			}
 
 			if (verseRanges.length > 1){
-				console.log(verseParts, fragmentids);
+				sofia.config.debug && console.log(verseParts, fragmentids);
 			}
 
 			TextLoader.loadSection( currentTextInfo, sectionid, function(content) {

@@ -41,7 +41,7 @@ var WindowManager = function(node) {
 			windowToClose = (windowsToClose.length == 1) ? windowsToClose[0] : null;
 
 		if (windowToClose == null) {
-			console.log('ERROR', "Can't find window", id);
+			sofia.config.debug && console.log('ERROR', "Can't find window", id);
 			return;
 		}
 
@@ -142,7 +142,7 @@ var Window = function(id, parentNode, className, data, manager) {
 		closeBtn = $('<span class="close-button"></span>')
 					.appendTo(node)
 					.on('click', function() {
-						console.log(id, 'remove', manager);
+						sofia.config.debug && console.log(id, 'remove', manager);
 
 
 						manager.remove(id);
@@ -181,7 +181,7 @@ var Window = function(id, parentNode, className, data, manager) {
 
 	function close() {
 
-		console.log('window.close', controller.close);
+		sofia.config.debug && console.log('window.close', controller.close);
 
 		if (typeof controller.close != 'undefined') {
 			controller.close();

@@ -51,7 +51,7 @@ sofia.textproviders['local'] = (function() {
 			},
 			error: function(error) {
 
-				console.log("ERROR TextInfoLoader.getText", infoUrl);
+				sofia.config.debug && console.log("ERROR TextInfoLoader.getText", infoUrl);
 
 				if (errorCallback) {
 					errorCallback(error);
