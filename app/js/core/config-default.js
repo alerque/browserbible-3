@@ -68,7 +68,10 @@ sofia.config = {
 	fcbhLoadVersions: false,
 
 	// jesus film media
-	jfmKey: ''
+	jfmKey: '',
+
+	// Enable debug messages, e.g. console.log()
+	debug: false
 };
 
 sofia.customConfigs = {
@@ -76,5 +79,4 @@ sofia.customConfigs = {
 		customCssUrl: 'dbs.css'
 
 	}
-
 };
