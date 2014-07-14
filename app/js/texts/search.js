@@ -57,10 +57,10 @@ TextSearch = function() {
 
 	function start(text, textid) {
 
-		//console.log('TextSearch.start', text, textid);
+		sofia.config.debug && console.info('TextSearch.start', text, textid);
 
 		if (isSearching) {
-			//console.log('already started ... return');
+			sofia.config.debug && console.info('already started ... return');
 			return false;
 		}
 		isSearching = true;
@@ -149,12 +149,12 @@ TextSearch = function() {
 
 	// fires after indexer loader is done
 	function indexesLoaded(e) {
-		//console.log('searchIndexLoader:complete', e.data);
+		sofia.config.debug && console.info('searchIndexLoader:complete', e.data);
 
 		if (e.data.loadedIndexes.length == 0) {
 
 			// BRUTE FORCE?
-			//console.log('BRUTE FORCE');
+			sofia.config.debug && console.info('BRUTE FORCE');
 
 			// create "index" of all verses?
 			searchIndexesData = [];
@@ -193,7 +193,7 @@ TextSearch = function() {
 			searchIndexesData = e.data.loadedResults;
 			searchIndexesCurrentIndex = -1;
 
-			//console.log('start loading indexes', searchIndexesData.length, searchIndexesCurrentIndex);
+			sofia.config.debug && console.info('start loading indexes', searchIndexesData.length, searchIndexesCurrentIndex);
 			loadNextSectionid();
 		}
 
@@ -206,14 +206,14 @@ TextSearch = function() {
 
 		if (searchIndexesCurrentIndex > searchIndexesData.length) {
 
-			//console.log('OVER');
+			sofia.config.debug && console.info('OVER');
 
 			isSearching = false;
 
 		} else if (searchIndexesCurrentIndex == searchIndexesData.length) {
 			// DONE!
 
-			//console.log('textSearch:complete');
+			sofia.config.debug && console.info('textSearch:complete');
 
 			ext.trigger('complete', {type: 'complete', target:this, data: {results: searchFinalResults, searchIndexesData: searchIndexesData, searchTermsRegExp: searchTermsRegExp, isLemmaSearch: isLemmaSearch}});
 
@@ -271,7 +271,7 @@ TextSearch = function() {
 
 			}, function(error) {
 
-				//console.log('searchindex:error');
+				sofia.config.debug && console.info('searchindex:error');
 
 				loadNextSectionid();
 			});
@@ -528,7 +528,7 @@ SearchIndexLoader = function() {
 
 		searchType = /\bOR\b/gi.test(searchText) ? 'OR' : 'AND';
 
-		//console.log('SearchIndexLoader:loadIndexes', searchText, searchType, searchTerms, isLemmaSearch);
+		sofia.config.debug && console.info('SearchIndexLoader:loadIndexes', searchText, searchType, searchTerms, isLemmaSearch);
 
 		// start it up
 		loadNextIndex();
@@ -579,11 +579,11 @@ SearchIndexLoader = function() {
 		}
 
 		if (searchTerm == 'undefined') {
-			//console.log('STOP search. undefined term');
+			sofia.config.debug && console.info('STOP search. undefined term');
 			return;
 		}
 
-		//console.log('Loading Index:' + searchTerm + ',' + searchTermEncoded);
+		sofia.config.debug && console.info('Loading Index:' + searchTerm + ',' + searchTermEncoded);
 
 		// attempt to load in index
 		$.ajax({
@@ -604,7 +604,7 @@ SearchIndexLoader = function() {
 				loadNextIndex();
 			},
 			error: function() {
-				//console.log('no index for: ' + searchTerm);
+				sofia.config.debug && console.info('no index for: ' + searchTerm);
 				loadNextIndex();
 			}
 
@@ -714,7 +714,7 @@ SearchIndexLoader = function() {
 		}
 
 
-		//console.log('SearchIndexLoader:processIndexes', 'DONe');
+		sofia.config.debug && console.info('SearchIndexLoader:processIndexes', 'DONe');
 		// send up the chain
 		ext.trigger('complete', {type:'complete', target: this, data: {
 																	loadedIndexes: loadedIndexes,

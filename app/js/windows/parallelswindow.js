@@ -46,7 +46,7 @@ var ParallelsWindow = function(id, node, init_data) {
 	// DOM to object stuff
 	function textChooserOffClick(e) {
 
-		//console.log('doc click');
+		sofia.config.debug && console.info('doc click');
 
 		var target = $(e.target),
 			clickedOnChooser = false;
@@ -308,7 +308,7 @@ var ParallelsWindow = function(id, node, init_data) {
 						} else {
 							var books = row.books ? row.books : currentParallelData.books;
 
-							//console.log(currentTextInfo.lang);
+							sofia.config.debug && console.info(currentTextInfo.lang);
 							html.push('<td class="parallel-passage" ' + style + ' lang="' + iso2iana.convert(currentTextInfo.lang) + '">' +
 											bible.BOOK_DATA[books[j]].names[currentTextInfo.lang][0] + ' ' + passage +
 										'</td>');
@@ -369,7 +369,7 @@ var ParallelsWindow = function(id, node, init_data) {
 						if (passage == null) {
 							html.push('<td class="parallel-passage">-</td>');
 						} else {
-							//console.log(currentTextInfo.lang);
+							sofia.config.debug && console.info(currentTextInfo.lang);
 							html.push('<td class="parallel-passage" data-bookid="' + currentParallelData.books[j] + '" ' +
 											'data-passage="' + passage + '">' +
 											bible.BOOK_DATA[currentParallelData.books[j]].names[currentTextInfo.lang][0] + ' ' + passage +
@@ -527,7 +527,7 @@ var ParallelsWindow = function(id, node, init_data) {
 		if (bookid && passage) {
 
 			// load
-			//console.log(bookid, passage);
+			sofia.config.debug && console.info(bookid, passage);
 
 			var sectionid = bookid + passage.split(':')[0],
 				verseParts = passage.split(':')[1],
@@ -567,7 +567,7 @@ var ParallelsWindow = function(id, node, init_data) {
 					var fragmentid = fragmentids[i],
 						verseNode = content.find('.v[data-id="' + fragmentid + '"]');
 
-					//console.log(verseNode.prev());
+					sofia.config.debug && console.info(verseNode.prev());
 
 					if (verseNode.prev().hasClass('v-num')) {
 						cell.append(verseNode.prev());
@@ -602,7 +602,7 @@ var ParallelsWindow = function(id, node, init_data) {
 
 	function size(width, height) {
 
-		//console.log('newsize',width,height);
+		sofia.config.debug && console.info('newsize',width,height);
 
 		container
 			.outerWidth(width)

@@ -108,7 +108,7 @@ var ConfigUrl = function(node) {
 					paramShort = paramName == 'win' ? 'w' : winTypeInfo.paramKeys[paramName];
 
 				newParams[ paramShort + (i+1) ] = paramData;
-				//console.log(paramName, paramData);
+				sofia.config.debug && console.info(paramName, paramData);
 			}
 
 		}

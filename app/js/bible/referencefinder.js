@@ -6,7 +6,7 @@ bible.ReferenceFinder = (function() {
 			lastRef = null,
 			parts = text.split(';');
 
-		//console.log('PARSE', text);
+		sofia.config.debug && console.info('PARSE', text);
 
 		for (var i=0, il=parts.length; i<il; i++) {
 			var part = parts[i],
@@ -16,7 +16,7 @@ bible.ReferenceFinder = (function() {
 				var subPart = subParts[j],
 					ref = null;
 
-				//console.log(subPart);
+				sofia.config.debug && console.info(subPart);
 
 				subPart = subPart
 								.replace(/\s$/, '')

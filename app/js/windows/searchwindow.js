@@ -118,7 +118,7 @@ var SearchWindow = function(id, parentNode, init_data) {
 		var tr = $(this),
 			fragmentid = tr.attr('data-fragmentid');
 
-		//console.log('search click', fragmentid);
+		sofia.config.debug && console.info('search click', fragmentid);
 
 		ext.trigger('globalmessage', {
 								type: 'globalmessage',
@@ -175,7 +175,7 @@ var SearchWindow = function(id, parentNode, init_data) {
 
 	function searchIndexCompleteHandler(e) {
 		var results = e.data.results;
-		//console.log('searcher:indexcomplete', e.data);
+		sofia.config.debug && console.info('searcher:indexcomplete', e.data);
 
 
 		footer.html(i18n.t('windows.search.results') + e.data.searchIndexesData.length );
@@ -189,7 +189,7 @@ var SearchWindow = function(id, parentNode, init_data) {
 		searchTermsRegExp = e.data.searchTermsRegExp;
 		isLemmaSearch = e.data.isLemmaSearch;
 
-		//console.log('searcher:complete'); // , e.data.results);
+		sofia.config.debug && console.info('searcher:complete'); // , e.data.results);
 
 		var results = e.data.results,
 			html = //'<h2>Results: ' + results.length + '</h2>' +
@@ -511,7 +511,7 @@ var SearchWindow = function(id, parentNode, init_data) {
 
 				selectedText = data;
 
-				//console.log('search', init_data.textid, data);
+				sofia.config.debug && console.info('search', init_data.textid, data);
 
 				textChooser.setTextInfo(selectedText);
 				textui.html(selectedText.abbr);

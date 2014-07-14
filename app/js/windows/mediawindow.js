@@ -234,7 +234,7 @@ var MediaWindow = function(id, parentNode, data) {
 
 
 			// restart
-			//console.log(width, height, new_width);
+			sofia.config.debug && console.info(width, height, new_width);
 
 			a
 				.width(new_width)

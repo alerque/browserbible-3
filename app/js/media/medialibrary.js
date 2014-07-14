@@ -193,7 +193,7 @@ var MediaLibrary = (function(){
 
 	function loadNextMediaLibrary() {
 
-		//console.log('loadNextMediaLibrary', currentMediaIndex, mediaLibraries.length);
+		sofia.config.debug && console.info('loadNextMediaLibrary', currentMediaIndex, mediaLibraries.length);
 
 		if (currentMediaIndex < mediaLibraries.length) {
 

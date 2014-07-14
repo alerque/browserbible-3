@@ -19,8 +19,8 @@ sofia.textproviders['local'] = (function() {
 				callback(textInfoData);
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
-				//console.log('error loading texts.json', jqXHR, textStatus, errorThrown);
-				//console.log(textStatus);
+				sofia.config.debug && console.info('error loading texts.json', jqXHR, textStatus, errorThrown);
+				sofia.config.debug && console.info(textStatus);
 
 				var modal = new MovableWindow(600,250, 'Texts Error');
 				//modal.size(500, 200).center();
@@ -85,7 +85,7 @@ sofia.textproviders['local'] = (function() {
 							footnotetext = footnote.find('.text'),
 							noteintext = content.find(noteid);
 
-						//console.log(noteid, noteintext);
+						sofia.config.debug && console.info(noteid, noteintext);
 
 						noteintext.append(footnotetext);
 
@@ -103,7 +103,7 @@ sofia.textproviders['local'] = (function() {
 					errorCallback(textid, sectionid);
 				}
 
-				//console.log('error', textStatus, errorThrown, jqXHR );
+				sofia.config.debug && console.info('error', textStatus, errorThrown, jqXHR );
 			}
 		});
 

@@ -50,7 +50,7 @@ var MediaLibraryPlugin = function(app) {
 
 			}
 
-			//console.log('media click', mediaLibrary);
+			sofia.config.debug && console.info('media click', mediaLibrary);
 
 
 			mediaForVerse = mediaLibrary.data[verseid];
@@ -138,7 +138,7 @@ var MediaLibraryPlugin = function(app) {
 				verse = verse.closest('.section').find('.' + verseid).first();
 
 				if (verseid == 'LK1_1') {
-					//console.log('check');
+					sofia.config.debug && console.info('check');
 				}
 
 				if (!verse.hasClass('has-media')) {

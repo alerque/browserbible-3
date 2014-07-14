@@ -81,7 +81,7 @@ var ConfigToggles = function(node) {
 			sofia.analytics.record('setting', toggleId, checked);
 		}
 
-		//console.log('setValue', toggleId, checked);
+		sofia.config.debug && console.info('setValue', toggleId, checked);
 		AppSettings.setValue(toggleId, {checked: checked});
 
 	}

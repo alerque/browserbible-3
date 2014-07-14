@@ -40,7 +40,7 @@ var MovableWindow = function(width,height,titleText,id) {
 
 	function move(e) {
 		// handle move
-		//console.log(e);
+		sofia.config.debug && console.info(e);
 
 		container.css({
 			top: startWindowPosition.top - (startMousePosition.y - e.clientY),

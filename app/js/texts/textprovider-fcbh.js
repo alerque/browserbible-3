@@ -218,7 +218,7 @@ sofia.textproviders['fcbh'] = (function() {
 				nextid = sectionIndex < textinfo.sections.length ? textinfo.sections[sectionIndex+1] : null;
 				url = 'http://dbt.io/library/verse?v=2&reply=jsonp&key=' + sofia.config.fcbhKey + '&dam_id=' + dam_id + '&book_id=' + usfmbook + '&chapter_id=' + chapter; // format=osis (sadly doesn't do anything)
 
-			//console.log(url);
+			sofia.config.debug && console.info(url);
 
 			$.ajax({
 				beforeSend: function(xhr){

@@ -14,7 +14,7 @@ var LemmaMatchPlugin = function(app) {
 
 		$('.windows-main').on('mouseover','.BibleWindow l', function(e) {
 
-			//console.log('over');
+			sofia.config.debug && console.info('over');
 
 			var l = $(this),
 				s = l.attr('s');

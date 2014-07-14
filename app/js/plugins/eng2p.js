@@ -239,7 +239,7 @@ var Eng2pPlugin = function(node) {
 
 
 			if ((e.data.content.attr('lang') == 'en' || e.data.content.attr('lang') == 'eng') && eng2pSetting.eng2p != 'none') {
-				//console.log('Eng2P', e.data.content.attr('data-id'));
+				sofia.config.debug && console.log('Eng2P', e.data.content.attr('data-id'));
 
 				runPluralTransforms(e.data.content);
 			}

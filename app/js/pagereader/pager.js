@@ -403,7 +403,7 @@ var Pager = function(parent_node, paginate_callback) {
 
 			var child = content[0].childNodes[0];
 
-			//console.log('checking', child);
+			sofia.config.debug && console.info('checking', child);
 
 			if (child.nodeType === 1) {
 
@@ -413,7 +413,7 @@ var Pager = function(parent_node, paginate_callback) {
 
 				var page_height = newNode.closest('.page').outerHeight(true);
 
-				//console.log('checking size', copy, page_height, max_height);
+				sofia.config.debug && console.info('checking size', copy, page_height, max_height);
 
 				if (page_height > max_height) {
 

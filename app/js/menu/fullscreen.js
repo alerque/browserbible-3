@@ -25,7 +25,7 @@ var FullScreenButton = function(node) {
 
 	}
 
-	//console.log(fullScreenApi);
+	sofia.config.debug && console.info(fullScreenApi);
 
 	if (!fullScreenApi.supportsFullScreen) {
 		fullscreenButton.hide();

@@ -29,7 +29,7 @@ var App = function() {
 
 		var settings = getWindowSettings(),
 			windowWidth = win.width();
-		//console.log('settings',settings, settings.length);
+		sofia.config.debug && console.info('settings',settings, settings.length);
 
 		if (windowWidth < 768 && settings.windows.length >= 3) {
 			settings.windows = settings.windows.slice(0,2);
@@ -55,7 +55,7 @@ var App = function() {
 				}
 			}
 
-			//console.log('create window', setting, windowClassName);
+			sofia.config.debug && console.info('create window', setting, windowClassName);
 			windowManager.add(windowClassName, setting.data);
 		}
 
@@ -193,7 +193,7 @@ var App = function() {
 				windows: windowSettings
 			};
 
-		//console.log('storeSettings', settings);
+		sofia.config.debug && console.info('storeSettings', settings);
 
 		// store
 		AppSettings.setValue(settingsKey, settings );

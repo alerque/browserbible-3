@@ -12,7 +12,7 @@ var AppSettings = (function() {
 		key = sofia.config.settingsPrefix + key;
 
 
-		//console.log('getValue', key, defaultValue);
+		sofia.config.debug && console.info('getValue', key, defaultValue);
 
 		var returnValue = {},
 			storedValue = null;
@@ -23,7 +23,7 @@ var AppSettings = (function() {
 			returnValue[objkey] = defaultValue[objkey];
 		}
 
-		//console.log('default', returnValue);
+		sofia.config.debug && console.info('default', returnValue);
 
 		// require localStorage (no cookies!)
 		if (typeof window.localStorage == 'undefined') {
@@ -32,7 +32,7 @@ var AppSettings = (function() {
 
 		storedValue = window.localStorage[key];
 
-		//console.log('storedValue', 'key:' + key, storedValue);
+		sofia.config.debug && console.info('storedValue', 'key:' + key, storedValue);
 
 		if (storedValue == null) {
 			return returnValue;
@@ -44,13 +44,13 @@ var AppSettings = (function() {
 			}
 		}
 
-		//console.log('storedValue', storedValue);
+		sofia.config.debug && console.info('storedValue', storedValue);
 
 		for (var objkey in storedValue) {
 			returnValue[objkey] = storedValue[objkey];
 		}
 
-		//console.log('combined', returnValue);
+		sofia.config.debug && console.info('combined', returnValue);
 
 		return returnValue;
 	}
@@ -61,7 +61,7 @@ var AppSettings = (function() {
 
 		if (typeof window.localStorage != 'undefined') {
 
-			//console.log('STORE', 'key:' + key, value);
+			sofia.config.debug && console.info('STORE', 'key:' + key, value);
 
 			window.localStorage[key] = JSON.stringify(value);
 		}

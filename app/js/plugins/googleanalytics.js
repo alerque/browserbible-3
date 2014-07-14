@@ -88,7 +88,7 @@ var GoogleAnalyticsPlugin = function(app) {
 
 		record: function(category, action, label, value) {
 
-			//console.log('GOOGLE', arguments);
+			sofia.config.debug && console.info('GOOGLE', arguments);
 
 			if (sofia.config.enableOnlineSources && typeof ga != 'undefined') {
 				ga('send', 'event', category, action, label, value);

@@ -187,7 +187,7 @@ var TextChooser = function(container, target, text_type) {
 
 			updateRecentlyUsed();
 
-			//console.log('chooser:change:click', selectedTextInfo);
+			sofia.config.debug && console.info('chooser:change:click', selectedTextInfo);
 			ext.trigger('change', {type:'change', target: this, data: selectedTextInfo});
 
 		});
@@ -217,7 +217,7 @@ var TextChooser = function(container, target, text_type) {
 			}
 		}
 
-		//console.log('storeRecentlyUsed',recentlyUsed.recent.length);
+		sofia.config.debug && console.info('storeRecentlyUsed',recentlyUsed.recent.length);
 
 		// save
 		AppSettings.setValue(recentlyUsedKey, recentlyUsed);

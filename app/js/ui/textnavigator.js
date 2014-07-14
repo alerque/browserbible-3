@@ -122,7 +122,7 @@ var TextNavigator = function(container, target) {
 
 	// divisions = Bible books
 	function renderDivisions() {
-		//console.log('renderDivisions', textInfo);
+		sofia.config.debug && console.info('renderDivisions', textInfo);
 
 		// render books
 		var html = [];
@@ -133,7 +133,7 @@ var TextNavigator = function(container, target) {
 
 		fullBookMode = !(textInfo.divisionAbbreviations || textInfo.lang == 'eng') ;
 
-		//console.log(fullBookMode, textInfo.divisionAbbreviations , textInfo.divabbr);
+		sofia.config.debug && console.info(fullBookMode, textInfo.divisionAbbreviations , textInfo.divabbr);
 
 		if (fullBookMode) {
 			changer.find('.text-navigator-divisions').addClass('text-navigator-divisions-full');
@@ -197,7 +197,7 @@ var TextNavigator = function(container, target) {
 			.siblings()
 				.removeClass('selected')
 
-		//console.log('division click', this);
+		sofia.config.debug && console.info('division click', this);
 
 		fullname.hide();
 
@@ -231,7 +231,7 @@ var TextNavigator = function(container, target) {
 				break;
 			case 'book':
 
-				//console.log('text', textInfo.sections);
+				sofia.config.debug && console.info('text', textInfo.sections);
 
 				// flat list of sections (i.e. pages)
 				for (var i=0, il= textInfo.sections.length ; i<il; i++) {

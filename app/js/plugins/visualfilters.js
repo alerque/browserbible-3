@@ -106,7 +106,7 @@ var VisualFilters = function(node) {
 		openVisualizationsButton = $('<span class="config-button i18n" data-i18n="[html]plugins.visualfilters.button" id="config-visualfilters-button"></span>')
 						.appendTo( $('#config-tools .config-body') );
 
-	//console.log('LOADED VIZ',visualSettings);
+	sofia.config.debug && console.info('LOADED VIZ',visualSettings);
 
 	// Attach to Config pane
 
@@ -319,7 +319,7 @@ var VisualFilters = function(node) {
 			transform.style = row.find('.visualfilters-style span').attr('data-style');
 			transform.styleLabel = row.find('.visualfilters-style span').html();
 
-			//console.log('saving', transform.style, row.find('.visualfilters-style span').prop('data-style'));
+			sofia.config.debug && console.info('saving', transform.style, row.find('.visualfilters-style span').prop('data-style'));
 
 
 			if (transform.morph != '') {
@@ -338,7 +338,7 @@ var VisualFilters = function(node) {
 			visualSettings.transforms.push(transform);
 		});
 
-		//console.log('saving', visualSettings);
+		sofia.config.debug && console.info('saving', visualSettings);
 
 		// store for next load
 		AppSettings.setValue(settingsKey, visualSettings);
@@ -1128,7 +1128,7 @@ var MorphologySelector = function(parent) {
 
 	function drawPartsOfSpeech() {
 
-		//console.log('drawing', currentMorphology);
+		sofia.config.debug && console.info('drawing', currentMorphology);
 
 		morphSelectorPOS.empty();
 

@@ -330,7 +330,7 @@ var MapWindow = function(id, parentNode, data) {
 				verseLocations = locationDataByVerse[verseid],
 				html = verse.html();
 
-			//console.log(verseid, verseLocations);
+			sofia.config.debug && console.info(verseid, verseLocations);
 
 			if (typeof verseLocations != 'undefined') {
 
@@ -403,7 +403,7 @@ var MapWindow = function(id, parentNode, data) {
 
 	ext.on('message', function(e) {
 		if (e.data.messagetype == 'textload') {
-			//console.log('maps got text load', e.data.sectionid);
+			sofia.config.debug && console.info('maps got text load', e.data.sectionid);
 
 			// store until data is loaded
 			if (locationDataByVerse == null) {

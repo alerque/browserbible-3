@@ -29,7 +29,7 @@ var Scroller = function(node) {
 		if (ignoreScrollEvent) {
 			return;
 		}
-		//console.log('sendingscroll');
+		sofia.config.debug && console.info('sendingscroll');
 
 		update_location_info();
 
@@ -156,7 +156,7 @@ var Scroller = function(node) {
 			ext.trigger('locationchange', {type:'locationchange', target: this, data: newLocationInfo});
 		}
 
-		//console.log('new location', newLocationInfo);
+		sofia.config.debug && console.info('new location', newLocationInfo);
 
 		locationInfo = newLocationInfo;
 	};
@@ -281,7 +281,7 @@ var Scroller = function(node) {
 			node.scrollTop(0);
 		}
 
-		//console.log(loadType, sectionid, fragmentid);
+		sofia.config.debug && console.info(loadType, sectionid, fragmentid);
 
 		TextLoader.loadSection( currentTextInfo, sectionid, function(content) {
 
@@ -348,7 +348,7 @@ var Scroller = function(node) {
 			ignoreScrollEvent = false;
 
 			// send load event up to Window/App
-			//console.log('loaded', sectionid);
+			sofia.config.debug && console.info('loaded', sectionid);
 			ext.trigger('globalmessage', {type: 'globalmessage',
 											target: this,
 											data: {
@@ -378,7 +378,7 @@ var Scroller = function(node) {
 		// find the fragment
 		var fragment = wrapper.find('.' + fragmentid);
 
-		//console.log('scrollTo', fragmentid, fragment.length);
+		sofia.config.debug && console.info('scrollTo', fragmentid, fragment.length);
 
 		// if it exists, we'll move to it
 		if (fragment.length > 0) {
@@ -398,7 +398,7 @@ var Scroller = function(node) {
 		// if it's not there, we'll see if we can load it for this book (or bible version)
 		else {
 			// need to load it!
-			//console.log('need to load', fragmentid);
+			sofia.config.debug && console.info('need to load', fragmentid);
 
 			var sectionid = fragmentid.split('_')[0],
 				hasSection = currentTextInfo != null ? currentTextInfo.sections.indexOf(sectionid) > -1 : false;

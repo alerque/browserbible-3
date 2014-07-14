@@ -107,7 +107,7 @@ var TextNavigator = function(lang, navigation_changed_callback) {
 				break;
 			case 'book':
 
-				//console.log('text', textInfo.sections);
+				sofia.config.debug && console.info('text', textInfo.sections);
 
 				// flat list of sections (i.e. pages)
 				for (var i=0, il= textInfo.sections.length ; i<il; i++) {

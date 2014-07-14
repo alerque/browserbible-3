@@ -122,7 +122,7 @@ var TextWindow = function(id, node, init_data, text_type) {
 	// DOM to object stuff
 	function textChooserOffClick(e) {
 
-		//console.log('doc click');
+		sofia.config.debug && console.info('doc click');
 
 		var target = $(e.target),
 			clickedOnChooser = false;
@@ -170,7 +170,7 @@ var TextWindow = function(id, node, init_data, text_type) {
 	// DOM to object stuff
 	function textNavigatorOffClick(e) {
 
-		//console.log('doc click');
+		sofia.config.debug && console.info('doc click');
 
 		var target = $(e.target),
 			clickedOnChooser = false;
@@ -255,7 +255,7 @@ var TextWindow = function(id, node, init_data, text_type) {
 		;
 
 	textNavigator.on('change', function (e) {
-		//console.log('scrollerapp:navigator:change', e);
+		sofia.config.debug && console.info('scrollerapp:navigator:change', e);
 
 		//ext.trigger('globalmessage', {type: 'usernav', target: ext, data: {usernavtype: 'menu', sectionid: e.data, textid: currentTextInfo.id}});
 
@@ -305,7 +305,7 @@ var TextWindow = function(id, node, init_data, text_type) {
 	scroller.on('globalmessage', function(e) {
 		if ((e.data.messagetype == 'nav' && hasFocus) || e.data.messagetype != 'nav') {
 
-			//console.log('sending global');
+			sofia.config.debug && console.info('sending global');
 			if (ext) {
 				ext.trigger('globalmessage', {type: e.type, target: ext, data: e.data});
 			}
@@ -427,7 +427,7 @@ var TextWindow = function(id, node, init_data, text_type) {
 
 	function size(width, height) {
 
-		//console.log('winsize',id,width,height);
+		sofia.config.debug && console.info('winsize',id,width,height);
 
 		container
 			.outerWidth(width)
@@ -552,7 +552,7 @@ var TextWindow = function(id, node, init_data, text_type) {
 		var data = e.data;
 
 		if (data.messagetype == 'nav' && (data.type == 'bible' || data.type == 'commentary') && data.locationInfo != null) {
-			//console.log(id, data.locationInfo.fragmentid, data.locationInfo.offset)
+			sofia.config.debug && console.info(id, data.locationInfo.fragmentid, data.locationInfo.offset)
 			scroller.scrollTo( data.locationInfo.fragmentid, data.locationInfo.offset);
 		}
 	});

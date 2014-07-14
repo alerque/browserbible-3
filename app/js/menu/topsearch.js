@@ -36,7 +36,7 @@ var MainSearchBox = function(node) {
 		for (var i=0,il=appSettings.length; i<il; i++) {
 			var settings = appSettings[i];
 
-			//console.log(settings);
+			sofia.config.debug && console.info(settings);
 
 			// first text
 			if (settings.windowType == 'BibleWindow' && firstBibleWindow == null) {
